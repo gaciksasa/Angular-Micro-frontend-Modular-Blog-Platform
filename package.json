@@ -16,16 +16,16 @@
     "@angular/common": "^19.0.0",
     "@angular/compiler": "^19.0.0",
     "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
+    "@angular/forms": "^19.0.1",
     "@angular/material": "^19.0.0",
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
     "json-server": "^1.0.0-beta.3",
     "rxjs": "~7.8.0",
+    "shared-lib": "file:dist/shared-lib",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.0",
-    "shared-lib": "file:dist/shared-lib"
+    "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.2",

@@ -1,5 +1,3 @@
-// projects/shared-lib/src/lib/interfaces/blog.interfaces.ts
-
 export interface BlogPost {
   postId: string;
   title: string;
@@ -11,12 +9,8 @@ export interface BlogPost {
   status: 'Draft' | 'Published';
 }
 
-export interface User {
-  userId: string;
-  name: string;
-  email: string;
-  role: 'Editor' | 'Contributor';
-}
+export type CreateBlogPost = Pick<BlogPost, 'title' | 'content' | 'tags' | 'status' | 'authorId'>;
+export type UpdateBlogPost = Partial<CreateBlogPost>;
 
 export interface BlogState {
   posts: BlogPost[];
