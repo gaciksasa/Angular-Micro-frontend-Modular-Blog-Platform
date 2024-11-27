@@ -17,6 +17,12 @@ import { Observable } from 'rxjs';
       </button>
     </div>
 
+    @if (error) {
+      <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        {{ error }}
+      </div>
+    }
+
     <div class="grid gap-4">
       @if (posts$ | async; as posts) {
         @for (post of posts; track post.postId) {
@@ -46,29 +52,44 @@ import { Observable } from 'rxjs';
             </div>
           </div>
         }
+      } @else {
+        <div class="text-center py-8">
+          <p>Loading posts...</p>
+        </div>
       }
     </div>
   `
 })
 export class PostListComponent implements OnInit {
   posts$!: Observable<BlogPost[]>;
+  error: string | null = null;
 
   constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {
+    this.loadPosts();
+  }
+
+  loadPosts(): void {
+    this.error = null;
     this.posts$ = this.blogService.getPosts();
   }
 
   deletePost(postId: string): void {
     if (confirm('Are you sure you want to delete this post?')) {
+      this.error = null;
       this.blogService.deletePost(postId).subscribe({
         next: () => {
-          // Refresh the posts list
-          this.posts$ = this.blogService.getPosts();
+          // Post is already removed from state in the service
+          this.loadPosts();
         },
         error: (error) => {
-          console.error('Error deleting post:', error);
-          alert('Failed to delete post.');
+          if (error.message === 'Post was already deleted') {
+            // Just refresh the list
+            this.loadPosts();
+          } else {
+            this.error = 'Failed to delete post. Please try again.';
+          }
         }
       });
     }

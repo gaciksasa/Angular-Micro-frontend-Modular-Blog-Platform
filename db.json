@@ -7,8 +7,13 @@
       "authorId": "u1",
       "createdAt": "2023-10-05T14:00:00Z",
       "updatedAt": "2023-10-05T16:00:00Z",
-      "tags": ["architecture", "frontend", "microservices"],
-      "status": "Published"
+      "tags": [
+        "architecture",
+        "frontend",
+        "microservices"
+      ],
+      "status": "Published",
+      "id": "b19c"
     },
     {
       "postId": "bp2",
@@ -17,8 +22,13 @@
       "authorId": "u2",
       "createdAt": "2023-09-20T10:00:00Z",
       "updatedAt": "2023-09-21T08:30:00Z",
-      "tags": ["design patterns", "modular", "development"],
-      "status": "Draft"
+      "tags": [
+        "design patterns",
+        "modular",
+        "development"
+      ],
+      "status": "Draft",
+      "id": "1cdd"
     }
   ],
   "users": [
@@ -26,13 +36,15 @@
       "userId": "u1",
       "name": "Alice Johnson",
       "email": "alice.johnson@example.com",
-      "role": "Editor"
+      "role": "Editor",
+      "id": "c3c5"
     },
     {
       "userId": "u2",
       "name": "Bob Smith",
       "email": "bob.smith@example.com",
-      "role": "Contributor"
+      "role": "Contributor",
+      "id": "d4b8"
     }
   ]
 }
