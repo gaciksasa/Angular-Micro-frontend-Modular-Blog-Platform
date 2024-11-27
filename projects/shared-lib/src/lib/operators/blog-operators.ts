@@ -1,4 +1,3 @@
-// projects/shared-lib/src/lib/operators/blog-operators.ts
 import { Observable, pipe } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 import { BlogPost } from '../interfaces/blog.interfaces';

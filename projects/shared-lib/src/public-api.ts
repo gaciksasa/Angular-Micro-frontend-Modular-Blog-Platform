@@ -1,6 +1,8 @@
-/*
- * Public API Surface of shared-lib
- */
+// Export everything from our module
+export * from './lib/shared-lib.module';
 
-export * from './lib/shared-lib.service';
-export * from './lib/shared-lib.component';
+// Export our interfaces
+export * from './lib/interfaces/blog.interfaces';
+
+// Export our services
+export * from './lib/services/blog.service';
