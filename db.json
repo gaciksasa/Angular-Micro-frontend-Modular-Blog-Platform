@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "postId": "bp1",
+      "title": "Introduction to Micro-Frontends",
+      "content": "Micro-frontends are a way to think about the web application as a composition of features...",
+      "authorId": "u1",
+      "createdAt": "2023-10-05T14:00:00Z",
+      "updatedAt": "2023-10-05T16:00:00Z",
+      "tags": ["architecture", "frontend", "microservices"],
+      "status": "Published"
+    },
+    {
+      "postId": "bp2",
+      "title": "Benefits of Modular Design",
+      "content": "Modular design in software development offers several key advantages...",
+      "authorId": "u2",
+      "createdAt": "2023-09-20T10:00:00Z",
+      "updatedAt": "2023-09-21T08:30:00Z",
+      "tags": ["design patterns", "modular", "development"],
+      "status": "Draft"
+    }
+  ],
+  "users": [
+    {
+      "userId": "u1",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "role": "Editor"
+    },
+    {
+      "userId": "u2",
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "role": "Contributor"
+    }
+  ]
+}
