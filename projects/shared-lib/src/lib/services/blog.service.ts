@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject, throwError  } from 'rxjs';
+import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import { map, catchError, switchMap } from 'rxjs/operators';
 import { BlogPost, BlogState, CreateBlogPost } from '../interfaces/blog.interfaces';
 
@@ -25,12 +25,23 @@ export class BlogService {
     return this.http.get<BlogPost[]>(`${this.apiUrl}/posts`);
   }
 
-  getPost(id: string): Observable<BlogPost> {
-    return this.http.get<BlogPost>(`${this.apiUrl}/posts/${id}`);
+  getPost(postId: string): Observable<BlogPost> {
+    // First find the post with the matching postId
+    return this.http.get<BlogPost[]>(`${this.apiUrl}/posts?postId=${postId}`).pipe(
+      map(posts => {
+        if (posts.length === 0) {
+          throw new Error('Post not found');
+        }
+        return posts[0];
+      }),
+      catchError(error => {
+        console.error('Error fetching post:', error);
+        return throwError(() => error);
+      })
+    );
   }
 
   createPost(postData: CreateBlogPost): Observable<BlogPost> {
-    // Generate a simple sequential postId
     const timestamp = Date.now();
     const newPost: Omit<BlogPost, 'id'> = {
       postId: `bp${timestamp}`,
@@ -47,28 +58,39 @@ export class BlogService {
   }
 
   updatePost(postId: string, updateData: Partial<BlogPost>): Observable<BlogPost> {
-    // Ensure we're not modifying immutable fields
-    const safeUpdate = {
-      ...updateData,
-      updatedAt: new Date().toISOString()
-    };
-
-    // Remove fields that shouldn't be updated
-    delete safeUpdate.id;
-    delete safeUpdate.postId;
-    delete safeUpdate.createdAt;
-
-    return this.http.patch<BlogPost>(`${this.apiUrl}/posts/${postId}`, safeUpdate);
-  }
-
-  deletePost(postId: string): Observable<void> {
-    // First find the post with the matching postId to get its json-server id
+    // First find the post with the matching postId
     return this.http.get<BlogPost[]>(`${this.apiUrl}/posts?postId=${postId}`).pipe(
       switchMap(posts => {
         if (posts.length === 0) {
           return throwError(() => new Error('Post not found'));
         }
-        // Use the json-server id for deletion
+        const post = posts[0];
+        const safeUpdate = {
+          ...updateData,
+          updatedAt: new Date().toISOString()
+        };
+
+        // Remove fields that shouldn't be updated
+        delete safeUpdate.id;
+        delete safeUpdate.postId;
+        delete safeUpdate.createdAt;
+
+        // Use the json-server id for the update
+        return this.http.patch<BlogPost>(`${this.apiUrl}/posts/${post.id}`, safeUpdate);
+      }),
+      catchError(error => {
+        console.error('Error updating post:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  deletePost(postId: string): Observable<void> {
+    return this.http.get<BlogPost[]>(`${this.apiUrl}/posts?postId=${postId}`).pipe(
+      switchMap(posts => {
+        if (posts.length === 0) {
+          return throwError(() => new Error('Post not found'));
+        }
         const post = posts[0];
         return this.http.delete<void>(`${this.apiUrl}/posts/${post.id}`);
       }),

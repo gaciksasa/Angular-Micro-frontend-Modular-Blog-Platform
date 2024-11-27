@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { BlogService, CreateBlogPost, UpdateBlogPost } from 'shared-lib';
 
 @Component({
   selector: 'app-post-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   template: `
     <form [formGroup]="postForm" (ngSubmit)="onSubmit()" class="max-w-2xl mx-auto">
+      @if (error) {
+        <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+          {{ error }}
+        </div>
+      }
+
       <div class="mb-4">
         <label class="block text-sm font-medium mb-1">Title</label>
         <input 
@@ -64,6 +70,7 @@ export class PostFormComponent implements OnInit {
   postForm: FormGroup;
   isEditMode = false;
   private postId: string | null = null;
+  error: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -83,19 +90,26 @@ export class PostFormComponent implements OnInit {
     this.postId = this.route.snapshot.paramMap.get('id');
     if (this.postId) {
       this.isEditMode = true;
-      this.blogService.getPost(this.postId).subscribe(post => {
-        this.postForm.patchValue({
-          title: post.title,
-          content: post.content,
-          tags: post.tags.join(', '),
-          status: post.status
-        });
+      this.blogService.getPost(this.postId).subscribe({
+        next: (post) => {
+          this.postForm.patchValue({
+            title: post.title,
+            content: post.content,
+            tags: post.tags.join(', '),
+            status: post.status
+          });
+        },
+        error: (error) => {
+          this.error = 'Failed to load post. Please try again.';
+          console.error('Error loading post:', error);
+        }
       });
     }
   }
 
   onSubmit(): void {
     if (this.postForm.valid) {
+      this.error = null;
       const formValue = this.postForm.value;
       const postData: CreateBlogPost = {
         title: formValue.title,
@@ -114,8 +128,8 @@ export class PostFormComponent implements OnInit {
           this.router.navigate(['/']);
         },
         error: (error) => {
+          this.error = 'Failed to save post. Please try again.';
           console.error('Error saving post:', error);
-          alert('Failed to save post.');
         }
       });
     }
