@@ -26,7 +26,6 @@ export class BlogService {
   }
 
   getPost(postId: string): Observable<BlogPost> {
-    // First find the post with the matching postId
     return this.http.get<BlogPost[]>(`${this.apiUrl}/posts?postId=${postId}`).pipe(
       map(posts => {
         if (posts.length === 0) {
@@ -43,7 +42,7 @@ export class BlogService {
 
   createPost(postData: CreateBlogPost): Observable<BlogPost> {
     const timestamp = Date.now();
-    const newPost: Omit<BlogPost, 'id'> = {
+    const newPost = {
       postId: `bp${timestamp}`,
       title: postData.title,
       content: postData.content,
@@ -58,7 +57,6 @@ export class BlogService {
   }
 
   updatePost(postId: string, updateData: Partial<BlogPost>): Observable<BlogPost> {
-    // First find the post with the matching postId
     return this.http.get<BlogPost[]>(`${this.apiUrl}/posts?postId=${postId}`).pipe(
       switchMap(posts => {
         if (posts.length === 0) {
@@ -75,7 +73,6 @@ export class BlogService {
         delete safeUpdate.postId;
         delete safeUpdate.createdAt;
 
-        // Use the json-server id for the update
         return this.http.patch<BlogPost>(`${this.apiUrl}/posts/${post.id}`, safeUpdate);
       }),
       catchError(error => {

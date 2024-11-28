@@ -2,11 +2,11 @@
   "posts": [
     {
       "postId": "bp1",
-      "title": "Introduction to Micro-Frontends",
+      "title": "Introduction to Frontends",
       "content": "Micro-frontends are a way to think about the web application as a composition of features...",
       "authorId": "u1",
       "createdAt": "2023-10-05T14:00:00Z",
-      "updatedAt": "2023-10-05T16:00:00Z",
+      "updatedAt": "2024-11-28T18:56:48.713Z",
       "tags": [
         "architecture",
         "frontend",

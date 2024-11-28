@@ -1,0 +1,5 @@
+{
+  "id": "postId",
+  "watch": true,
+  "port": 3000
+}
