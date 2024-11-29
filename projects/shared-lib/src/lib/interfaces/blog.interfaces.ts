@@ -1,5 +1,4 @@
 export interface BlogPost {
-  id?: string;  // Added for json-server compatibility
   postId: string;
   title: string;
   content: string;
