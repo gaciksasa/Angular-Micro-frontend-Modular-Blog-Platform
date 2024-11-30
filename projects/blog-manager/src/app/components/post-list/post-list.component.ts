@@ -8,8 +8,7 @@ import { Observable } from 'rxjs';
   selector: 'app-post-list',
   standalone: true,
   imports: [AsyncPipe, RouterLink, RouterModule],
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.scss']
+  templateUrl: './post-list.component.html'
 })
 export class PostListComponent implements OnInit {
   posts$!: Observable<BlogPost[]>;

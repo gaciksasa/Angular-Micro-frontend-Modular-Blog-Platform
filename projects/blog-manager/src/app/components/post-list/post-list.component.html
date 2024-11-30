@@ -1,6 +1,6 @@
 <div class="mb-4">
   <button 
-    class="post-list__button--primary"
+    class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
     [routerLink]="['/new']">
     Create New Post
   </button>
@@ -15,7 +15,7 @@
 <div class="grid gap-4">
   @if (posts$ | async; as posts) {
     @for (post of posts; track post.postId) {
-      <div class="post-list__item">
+      <div class="border p-4 rounded flex justify-between items-center hover:bg-gray-50">
         <div>
           <h3 class="text-xl font-semibold">{{ post.title }}</h3>
           <p class="text-gray-600">Status: {{ post.status }}</p>
@@ -29,12 +29,12 @@
         </div>
         <div class="flex gap-2">
           <button 
-            class="post-list__button--primary"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
             [routerLink]="['/edit', post.postId]">
             Edit
           </button>
           <button 
-            class="post-list__button--delete"
+            class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
             (click)="deletePost(post.postId)">
             Delete
           </button>
