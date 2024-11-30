@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { BlogService, BlogPost } from 'shared-lib';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-list',
   standalone: true,
-  imports: [AsyncPipe, RouterLink],
+  imports: [AsyncPipe, RouterLink, RouterModule],
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss']
 })

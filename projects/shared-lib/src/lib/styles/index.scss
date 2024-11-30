@@ -1,18 +1,14 @@
-@import "variables";
-@import "mixins";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use "sass:map";
+@use "variables" as *;
+@use "tailwindcss/base" as *;
+@use "tailwindcss/components" as *;
+@use "tailwindcss/utilities" as *;
 
 // Shared components styles
 .shared-button {
-  @include button-base;
+  @apply px-4 py-2 rounded;
 
   &--primary {
     @apply bg-blue-500 text-white;
-
-    &:hover {
-      @apply bg-blue-600;
-    }
   }
 }
