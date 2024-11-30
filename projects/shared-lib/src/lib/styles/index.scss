@@ -1,0 +1,18 @@
+@import "variables";
+@import "mixins";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Shared components styles
+.shared-button {
+  @include button-base;
+
+  &--primary {
+    @apply bg-blue-500 text-white;
+
+    &:hover {
+      @apply bg-blue-600;
+    }
+  }
+}

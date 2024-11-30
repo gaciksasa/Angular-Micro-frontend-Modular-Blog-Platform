@@ -224,6 +224,11 @@
             "styles": [
               "projects/blog-manager/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/shared-lib/src/lib/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

@@ -1,0 +1,32 @@
+// Import Tailwind utilities if you need them in your component
+@import "tailwindcss/utilities";
+
+// Your component-specific styles
+.post-list {
+  &__item {
+    @apply border p-4 rounded flex justify-between items-center;
+
+    // You can combine Tailwind with custom SCSS
+    &:hover {
+      @apply bg-gray-50;
+    }
+  }
+
+  &__button {
+    &--primary {
+      @apply bg-blue-500 text-white px-4 py-2 rounded;
+
+      &:hover {
+        @apply bg-blue-600;
+      }
+    }
+
+    &--delete {
+      @apply bg-red-500 text-white px-3 py-1 rounded;
+
+      &:hover {
+        @apply bg-red-600;
+      }
+    }
+  }
+}
