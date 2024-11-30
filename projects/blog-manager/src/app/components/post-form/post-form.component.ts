@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { BlogService, CreateBlogPost, UpdateBlogPost } from 'shared-lib';
+import { BlogService, CreateBlogPost, UpdateBlogPost, User } from 'shared-lib';
 
 @Component({
   selector: 'app-post-form',
@@ -29,6 +29,18 @@ import { BlogService, CreateBlogPost, UpdateBlogPost } from 'shared-lib';
           formControlName="content"
           rows="6"
           class="w-full p-2 border rounded"></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-1">Author</label>
+        <select 
+          formControlName="authorId"
+          class="w-full p-2 border rounded">
+          <option value="">Select Author</option>
+          @for (user of users; track user.userId) {
+            <option [value]="user.userId">{{ user.name }} ({{ user.role }})</option>
+          }
+        </select>
       </div>
 
       <div class="mb-4">
@@ -71,6 +83,7 @@ export class PostFormComponent implements OnInit {
   isEditMode = false;
   private postId: string | null = null;
   error: string | null = null;
+  users: User[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -81,12 +94,24 @@ export class PostFormComponent implements OnInit {
     this.postForm = this.fb.group({
       title: ['', Validators.required],
       content: ['', Validators.required],
+      authorId: ['', Validators.required],
       tags: [''],
       status: ['Draft', Validators.required]
     });
   }
 
   ngOnInit(): void {
+    // Load available users
+    this.blogService.getUsers().subscribe({
+      next: (users: any) => {
+        this.users = users;
+      },
+      error: (error: any) => {
+        this.error = 'Failed to load users. Please try again.';
+        console.error('Error loading users:', error);
+      }
+    });
+
     this.postId = this.route.snapshot.paramMap.get('id');
     if (this.postId) {
       this.isEditMode = true;
@@ -95,6 +120,7 @@ export class PostFormComponent implements OnInit {
           this.postForm.patchValue({
             title: post.title,
             content: post.content,
+            authorId: post.authorId,
             tags: post.tags.join(', '),
             status: post.status
           });
@@ -114,9 +140,9 @@ export class PostFormComponent implements OnInit {
       const postData: CreateBlogPost = {
         title: formValue.title,
         content: formValue.content,
+        authorId: formValue.authorId,
         tags: formValue.tags.split(',').map((tag: string) => tag.trim()).filter(Boolean),
-        status: formValue.status,
-        authorId: 'u1'  // Using a default author ID
+        status: formValue.status
       };
 
       const operation = this.isEditMode ?

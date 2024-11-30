@@ -2,13 +2,18 @@
   "posts": [
     {
       "postId": "bp1",
-      "title": "Introduction to Micro-Frontends",
+      "title": "Introduction to Frontends Micro",
       "content": "Micro-frontends are a way to think about the web application as a composition of features...",
       "authorId": "u1",
       "createdAt": "2023-10-05T14:00:00Z",
-      "updatedAt": "2023-10-05T16:00:00Z",
-      "tags": ["architecture", "frontend", "microservices"],
-      "status": "Published"
+      "updatedAt": "2024-11-30T19:45:15.751Z",
+      "tags": [
+        "architecture",
+        "frontend",
+        "microservices"
+      ],
+      "status": "Published",
+      "id": "72b9"
     },
     {
       "postId": "bp2",
@@ -17,8 +22,28 @@
       "authorId": "u2",
       "createdAt": "2023-09-20T10:00:00Z",
       "updatedAt": "2023-09-21T08:30:00Z",
-      "tags": ["design patterns", "modular", "development"],
-      "status": "Draft"
+      "tags": [
+        "design patterns",
+        "modular",
+        "development"
+      ],
+      "status": "Draft",
+      "id": "12a4"
+    },
+    {
+      "id": "95c7",
+      "postId": "bp1733000544508",
+      "title": "Fourth post",
+      "content": "asd asd  asd asdasd asdasdaad asdas",
+      "authorId": "u1",
+      "tags": [
+        "angular",
+        "css",
+        "frontend"
+      ],
+      "status": "Draft",
+      "createdAt": "2024-11-30T21:02:24.508Z",
+      "updatedAt": "2024-11-30T21:02:24.508Z"
     }
   ],
   "users": [
@@ -26,13 +51,15 @@
       "userId": "u1",
       "name": "Alice Johnson",
       "email": "alice.johnson@example.com",
-      "role": "Editor"
+      "role": "Editor",
+      "id": "4093"
     },
     {
       "userId": "u2",
       "name": "Bob Smith",
       "email": "bob.smith@example.com",
-      "role": "Contributor"
+      "role": "Contributor",
+      "id": "f3aa"
     }
   ]
-  }
+}

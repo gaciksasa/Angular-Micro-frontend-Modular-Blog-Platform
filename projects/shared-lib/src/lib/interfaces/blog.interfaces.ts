@@ -1,3 +1,5 @@
+import { User } from '../interfaces/user.interfaces';
+
 export interface BlogPost {
   id?: string;
   postId: string;
@@ -15,6 +17,7 @@ export type UpdateBlogPost = Partial<CreateBlogPost>;
 export interface BlogState {
   posts: BlogPost[];
   selectedPost?: BlogPost;
+  users?: User[]; 
   loading: boolean;
   error?: string;
 }
