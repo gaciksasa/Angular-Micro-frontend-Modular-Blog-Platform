@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+// projects/blog-viewer/src/styles.scss
+@use "tailwindcss/base" as *;
+@use "tailwindcss/components" as *;
+@use "tailwindcss/utilities" as *;
+
+// Import shared styles
+@use "../../shared-lib/src/lib/styles" as shared;

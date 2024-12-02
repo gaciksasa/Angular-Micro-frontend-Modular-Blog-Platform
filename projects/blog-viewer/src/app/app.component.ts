@@ -8,18 +8,22 @@ import { BlogPost } from 'shared-lib';
   selector: 'app-root',
   standalone: true,
   imports: [AsyncPipe],
-  providers: [BlogService],  // Provide BlogService here
+  providers: [BlogService], 
   template: `
     <div class="container mx-auto p-4">
-      <h1>Blog Posts</h1>
+      <h1 class="text-2xl font-bold mb-6">Blog Posts</h1>
+      <div class="grid gap-4">
       @if (posts$ | async; as posts) {
         @for (post of posts; track post.postId) {
-          <div>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.content }}</p>
+        <div>
+          <div class="border p-4 rounded flex justify-between items-center hover:bg-gray-50">
+            <h3 class="text-xl font-semibold">{{ post.title }}</h3>
+            <p class="text-gray-600">{{ post.content }}</p>
           </div>
+        </div>
         }
       }
+      </div>
     </div>
   `
 })

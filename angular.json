@@ -129,6 +129,13 @@
             "styles": [
               "projects/blog-viewer/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules",
+                "projects/shared-lib/src/lib/styles",
+                "projects"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -222,6 +229,7 @@
               }
             ],
             "styles": [
+              "projects/blog-viewer/src/styles.scss",
               "projects/blog-manager/src/styles.scss"
             ],
             "stylePreprocessorOptions": {

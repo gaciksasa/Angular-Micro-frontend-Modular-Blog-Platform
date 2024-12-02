@@ -2,10 +2,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "shared-lib": [
-        "./dist/shared-lib",
-        "./projects/shared-lib/src/public-api"
-      ]
+      "shared-lib": ["projects/shared-lib/src/public-api"],
+      "shared-lib/*": ["projects/shared-lib/src/lib/*"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
