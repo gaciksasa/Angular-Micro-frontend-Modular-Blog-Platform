@@ -1,82 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { BlogService, CreateBlogPost, UpdateBlogPost, User } from 'shared-lib';
+import { BlogService, CreateBlogPost, User } from 'shared-lib';
 
 @Component({
   selector: 'app-post-form',
   standalone: true,
   imports: [ReactiveFormsModule, RouterLink],
-  template: `
-    <form [formGroup]="postForm" (ngSubmit)="onSubmit()" class="max-w-2xl mx-auto">
-      @if (error) {
-        <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
-          {{ error }}
-        </div>
-      }
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium mb-1">Title</label>
-        <input 
-          type="text" 
-          formControlName="title"
-          class="w-full p-2 border rounded">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium mb-1">Content</label>
-        <textarea 
-          formControlName="content"
-          rows="6"
-          class="w-full p-2 border rounded"></textarea>
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium mb-1">Author</label>
-        <select 
-          formControlName="authorId"
-          class="w-full p-2 border rounded">
-          <option value="">Select Author</option>
-          @for (user of users; track user.userId) {
-            <option [value]="user.userId">{{ user.name }} ({{ user.role }})</option>
-          }
-        </select>
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium mb-1">Tags (comma-separated)</label>
-        <input 
-          type="text" 
-          formControlName="tags"
-          class="w-full p-2 border rounded">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium mb-1">Status</label>
-        <select 
-          formControlName="status"
-          class="w-full p-2 border rounded">
-          <option value="Draft">Draft</option>
-          <option value="Published">Published</option>
-        </select>
-      </div>
-
-      <div class="flex gap-4">
-        <button 
-          type="submit"
-          [disabled]="!postForm.valid"
-          class="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-400">
-          {{ isEditMode ? 'Update' : 'Create' }} Post
-        </button>
-        <button 
-          type="button"
-          routerLink="/"
-          class="bg-gray-500 text-white px-4 py-2 rounded">
-          Cancel
-        </button>
-      </div>
-    </form>
-  `
+  templateUrl: './post-form.component.html'
 })
 export class PostFormComponent implements OnInit {
   postForm: FormGroup;

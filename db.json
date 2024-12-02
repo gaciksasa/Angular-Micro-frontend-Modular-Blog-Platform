@@ -2,11 +2,11 @@
   "posts": [
     {
       "postId": "bp1",
-      "title": "Introduction to Frontends Micro 2",
+      "title": "Introduction to Frontends Micro",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "authorId": "u2",
       "createdAt": "2023-10-05T14:00:00Z",
-      "updatedAt": "2024-12-02T12:27:01.679Z",
+      "updatedAt": "2024-12-02T13:52:36.368Z",
       "tags": [
         "architecture",
         "frontend",
