@@ -5,15 +5,15 @@
       "postId": "bp1733148876938",
       "title": "First post",
       "content": "Lorem ipsum dolor sit amet...",
-      "authorId": "u1",
+      "authorId": "u2",
       "tags": [
         "aaa",
         "bbb",
         "ccc"
       ],
-      "status": "Published",
+      "status": "Draft",
       "createdAt": "2024-12-02T14:14:36.938Z",
-      "updatedAt": "2024-12-02T14:43:31.766Z"
+      "updatedAt": "2024-12-02T14:56:17.599Z"
     },
     {
       "id": "e4a4",
@@ -33,7 +33,7 @@
       "postId": "bp1733150483614",
       "title": "Second post",
       "content": "ads asd asd asd Lorem asd asdas d",
-      "authorId": "u1",
+      "authorId": "u2",
       "tags": [
         "bbb",
         "ccc",
@@ -41,7 +41,20 @@
       ],
       "status": "Published",
       "createdAt": "2024-12-02T14:41:23.614Z",
-      "updatedAt": "2024-12-02T14:43:45.891Z"
+      "updatedAt": "2024-12-02T14:56:23.135Z"
+    },
+    {
+      "id": "2837",
+      "postId": "bp1733150680632",
+      "title": "Fourth post",
+      "content": "asd sdasd asdasd as dasdasd",
+      "authorId": "u1",
+      "tags": [
+        "aaa"
+      ],
+      "status": "Published",
+      "createdAt": "2024-12-02T14:44:40.632Z",
+      "updatedAt": "2024-12-02T14:44:56.861Z"
     }
   ],
   "users": [

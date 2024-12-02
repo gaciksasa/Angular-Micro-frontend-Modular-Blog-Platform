@@ -160,4 +160,8 @@ export class BlogService {
       })
     );
   }
+
+  getAuthors(): Observable<User[]> {
+    return this.getUsers();
+  }
 }

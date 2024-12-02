@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { BlogService, BlogPost } from 'shared-lib';
+import { BlogService, BlogPost, User } from 'shared-lib';
 import { Observable, BehaviorSubject, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { FormsModule } from '@angular/forms';
@@ -14,8 +14,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class PostListComponent implements OnInit {
   posts$!: Observable<BlogPost[]>;
+  authors$!: Observable<User[]>;
   searchTerm = '';
+  selectedAuthor = '';
   private searchSubject = new BehaviorSubject<string>('');
+  private authorSubject = new BehaviorSubject<string>('');
   filteredPosts$!: Observable<BlogPost[]>;
   error: string | null = null;
 
@@ -23,6 +26,7 @@ export class PostListComponent implements OnInit {
 
   ngOnInit(): void {
     this.posts$ = this.blogService.getPosts();
+    this.authors$ = this.blogService.getAuthors();
     this.setupSearch();
   }
 
@@ -30,21 +34,28 @@ export class PostListComponent implements OnInit {
     this.searchSubject.next(term);
   }
 
+  onAuthorChange(authorId: string) {
+    this.authorSubject.next(authorId);
+  }
+
   private setupSearch() {
     this.filteredPosts$ = combineLatest([
       this.posts$,
-      this.searchSubject.asObservable()
+      this.searchSubject.asObservable(),
+      this.authorSubject.asObservable()
     ]).pipe(
-      map(([posts, term]) => {
-        const searchTerm = term.toLowerCase();
+      map(([posts, searchTerm, authorId]) => {
+        const term = searchTerm.toLowerCase();
         return posts
-          // First filter for published posts only
+          // Filter published posts
           .filter(post => post.status === 'Published')
-          // Then apply search filter
+          // Filter by author if selected
+          .filter(post => !authorId || post.authorId === authorId)
+          // Filter by search term
           .filter(post => 
-            post.title.toLowerCase().includes(searchTerm) ||
-            post.content.toLowerCase().includes(searchTerm) ||
-            post.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+            post.title.toLowerCase().includes(term) ||
+            post.content.toLowerCase().includes(term) ||
+            post.tags.some(tag => tag.toLowerCase().includes(term))
           );
       })
     );
