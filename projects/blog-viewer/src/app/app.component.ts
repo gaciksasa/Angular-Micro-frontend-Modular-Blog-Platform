@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PostListComponent } from './../../../blog-viewer/components/post-list/post-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PostListComponent],
+  imports: [RouterOutlet],
   template: `
     <main class="container mx-auto p-4">
-      <app-post-list />
+      <h1 class="text-2xl font-bold mb-6">Blog Posts</h1>
+      <router-outlet />
     </main>
   `
 })
