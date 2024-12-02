@@ -3,7 +3,9 @@
   "compilerOptions": {
     "paths": {
       "shared-lib": ["projects/shared-lib/src/public-api"],
-      "shared-lib/*": ["projects/shared-lib/src/lib/*"]
+      "shared-lib/*": ["projects/shared-lib/src/lib/*"],
+      "blog-viewer/*": ["projects/blog-viewer/src/app/*"],
+      "blog-manager/*": ["projects/blog-manager/src/app/*"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
