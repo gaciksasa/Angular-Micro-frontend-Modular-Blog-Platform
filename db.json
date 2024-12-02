@@ -3,10 +3,10 @@
     {
       "postId": "bp1",
       "title": "Introduction to Frontends Micro",
-      "content": "Micro-frontends are a way to think about the web application as a composition of features...",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "authorId": "u1",
       "createdAt": "2023-10-05T14:00:00Z",
-      "updatedAt": "2024-11-30T19:45:15.751Z",
+      "updatedAt": "2024-12-02T08:31:04.487Z",
       "tags": [
         "architecture",
         "frontend",
@@ -18,10 +18,10 @@
     {
       "postId": "bp2",
       "title": "Benefits of Modular Design",
-      "content": "Modular design in software development offers several key advantages...",
-      "authorId": "u2",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "authorId": "u1",
       "createdAt": "2023-09-20T10:00:00Z",
-      "updatedAt": "2023-09-21T08:30:00Z",
+      "updatedAt": "2024-12-02T08:31:22.649Z",
       "tags": [
         "design patterns",
         "modular",
@@ -35,7 +35,7 @@
       "postId": "bp1733000544508",
       "title": "Fourth post",
       "content": "asd asd  asd asdasd asdasdaad asdas",
-      "authorId": "u1",
+      "authorId": "u2",
       "tags": [
         "angular",
         "css",
@@ -43,7 +43,7 @@
       ],
       "status": "Draft",
       "createdAt": "2024-11-30T21:02:24.508Z",
-      "updatedAt": "2024-11-30T21:02:24.508Z"
+      "updatedAt": "2024-12-02T08:31:38.656Z"
     }
   ],
   "users": [
