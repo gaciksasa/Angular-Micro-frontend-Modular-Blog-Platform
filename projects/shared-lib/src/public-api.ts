@@ -7,3 +7,4 @@ export * from './lib/interfaces/user.interfaces';
 
 // Export our services
 export * from './lib/services/blog.service';
+export * from './lib/services/theme.service';

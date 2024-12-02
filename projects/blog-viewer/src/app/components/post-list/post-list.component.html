@@ -1,59 +1,59 @@
-<h1 class="text-3xl font-bold mb-6">Blog Posts</h1>
+<h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Blog Posts</h1>
 <div class="flex gap-4 mb-8">
-    <input 
-      type="text"
-      [(ngModel)]="searchTerm"
-      (ngModelChange)="onSearch($event)"
-      placeholder="Search posts..."
-      class="flex-1 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-    />
+   <input 
+     type="text"
+     [(ngModel)]="searchTerm"
+     (ngModelChange)="onSearch($event)"
+     placeholder="Search posts..."
+     class="flex-1 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-400"
+   />
 
-    <select
-      [(ngModel)]="selectedAuthor"
-      (ngModelChange)="onAuthorChange($event)"
-      class="w-64 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-      <option value="">All Authors</option>
-      @if (authors$ | async; as authors) {
-        @for (author of authors; track author.userId) {
-          <option [value]="author.userId">{{ author.name }}</option>
-        }
-      }
-    </select>
+   <select
+     [(ngModel)]="selectedAuthor"
+     (ngModelChange)="onAuthorChange($event)"
+     class="w-64 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white">
+     <option value="">All Authors</option>
+     @if (authors$ | async; as authors) {
+       @for (author of authors; track author.userId) {
+         <option [value]="author.userId" class="dark:bg-gray-800">{{ author.name }}</option>
+       }
+     }
+   </select>
 
-    <select
-      [(ngModel)]="selectedSort"
-      (ngModelChange)="onSortChange($event)"
-      class="w-48 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-      <option value="dateDesc">Newest First</option>
-      <option value="dateAsc">Oldest First</option>
-      <option value="titleAsc">Title A-Z</option>
-      <option value="titleDesc">Title Z-A</option>
-    </select>
+   <select
+     [(ngModel)]="selectedSort"
+     (ngModelChange)="onSortChange($event)"
+     class="w-48 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white">
+     <option value="dateDesc" class="dark:bg-gray-800">Newest First</option>
+     <option value="dateAsc" class="dark:bg-gray-800">Oldest First</option>
+     <option value="titleAsc" class="dark:bg-gray-800">Title A-Z</option>
+     <option value="titleDesc" class="dark:bg-gray-800">Title Z-A</option>
+   </select>
 </div>  
 @if (filteredPosts$ | async; as posts) {
-  <div class="grid gap-6">
-    @for (post of posts; track post.postId) {
-      <article 
-        class="p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow hover:cursor-pointer"
-        [routerLink]="['/viewer/post', post.postId]">
-        <h2 class="text-xl font-semibold mb-2 text-blue-500">{{ post.title }}</h2>
-        
-        <div class="flex gap-2 mb-4">
-          @for (tag of post.tags; track tag) {
-            <span class="bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-xl">
-              {{ tag }}
-            </span>
-          }
-        </div>
-        
-        <p class="text-gray-600 mb-4 line-clamp-3">
-          {{ post.content }}
-        </p>
-      </article>
-    }
-  </div>
+ <div class="grid gap-6">
+   @for (post of posts; track post.postId) {
+     <article 
+       class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow hover:cursor-pointer"
+       [routerLink]="['/viewer/post', post.postId]">
+       <h2 class="text-xl font-semibold mb-2 text-blue-500 dark:text-blue-400">{{ post.title }}</h2>
+       
+       <div class="flex gap-2 mb-4">
+         @for (tag of post.tags; track tag) {
+           <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm px-2 py-1 rounded-xl">
+             {{ tag }}
+           </span>
+         }
+       </div>
+       
+       <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+         {{ post.content }}
+       </p>
+     </article>
+   }
+ </div>
 } @else {
-  <div class="flex justify-center items-center h-64">
-    <p class="text-gray-500">Loading posts...</p>
-  </div>
+ <div class="flex justify-center items-center h-64">
+   <p class="text-gray-500 dark:text-gray-400">Loading posts...</p>
+ </div>
 }

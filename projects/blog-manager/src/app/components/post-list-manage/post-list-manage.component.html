@@ -1,51 +1,51 @@
-<h1 class="text-3xl font-bold mb-6">Blog Manager</h1>
+<h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white max-w-4xl mx-auto">Blog Manager</h1>
 
 <div class="mb-4">
-  <button 
-    class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-    [routerLink]="['/manager/new']">
-    Create New Post
-  </button>
+ <button 
+   class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors duration-200"
+   [routerLink]="['/manager/new']">
+   Create New Post
+ </button>
 </div>
 
 @if (error) {
-  <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-    {{ error }}
-  </div>
+ <div class="bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 px-4 py-3 rounded mb-4">
+   {{ error }}
+ </div>
 }
 
 <div class="grid gap-4">
-  @if (posts$ | async; as posts) {
-    @for (post of posts; track post.postId) {
-      <div class="border p-6 rounded-lg flex justify-between items-center bg-white hover:shadow-md transition-shadow">
-        <div>
-          <h3 class="text-xl font-semibold mb-2">{{ post.title }}</h3>
-          <p class="text-gray-600">Status: {{ post.status }}</p>
-          <div class="flex gap-2 mt-2">
-            @for (tag of post.tags; track tag) {
-              <span class="bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-xl">
-                {{ tag }}
-              </span>
-            }
-          </div>
-        </div>
-        <div class="flex gap-2">
-          <button 
-            class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
-            [routerLink]="['/manager/edit', post.postId]">
-            Edit
-          </button>
-          <button 
-            class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
-            (click)="deletePost(post.postId)">
-            Delete
-          </button>
-        </div>
-      </div>
-    }
-  } @else {
-    <div class="text-center py-8">
-      <p>Loading posts...</p>
-    </div>
-  }
+ @if (posts$ | async; as posts) {
+   @for (post of posts; track post.postId) {
+     <div class="border dark:border-gray-700 p-6 rounded-lg flex justify-between items-center bg-white dark:bg-gray-800 hover:shadow-md transition-all duration-200">
+       <div>
+         <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{{ post.title }}</h3>
+         <p class="text-gray-600 dark:text-gray-400">Status: {{ post.status }}</p>
+         <div class="flex gap-2 mt-2">
+           @for (tag of post.tags; track tag) {
+             <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm px-2 py-1 rounded-xl">
+               {{ tag }}
+             </span>
+           }
+         </div>
+       </div>
+       <div class="flex gap-2">
+         <button 
+           class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded transition-colors duration-200"
+           [routerLink]="['/manager/edit', post.postId]">
+           Edit
+         </button>
+         <button 
+           class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded transition-colors duration-200"
+           (click)="deletePost(post.postId)">
+           Delete
+         </button>
+       </div>
+     </div>
+   }
+ } @else {
+   <div class="text-center py-8">
+     <p class="text-gray-500 dark:text-gray-400">Loading posts...</p>
+   </div>
+ }
 </div>
