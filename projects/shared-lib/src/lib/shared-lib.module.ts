@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient  } from '@angular/common/http';
 import { BlogService } from './services/blog.service';
 
 @NgModule({
   imports: [
-    CommonModule,
-    HttpClientModule
+    CommonModule
   ],
   exports: [
-    CommonModule,
-    HttpClientModule
+    CommonModule
   ],
   providers: [
-    BlogService
+    BlogService,
+    provideHttpClient()
   ]
 })
 export class SharedLibModule { }

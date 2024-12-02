@@ -23,8 +23,15 @@ export class BlogService {
   });
 
   constructor(private http: HttpClient) {
-    // Initialize users when service is created
-    this.loadUsers().subscribe();
+    this.loadUsers().subscribe({
+      error: () => {
+        this.state.next({
+          ...this.state.value,
+          users: [],
+          loading: false
+        });
+      }
+    });
   }
 
   getState(): Observable<ExtendedBlogState> {

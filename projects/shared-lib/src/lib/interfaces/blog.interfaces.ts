@@ -17,7 +17,6 @@ export type UpdateBlogPost = Partial<CreateBlogPost>;
 export interface BlogState {
   posts: BlogPost[];
   selectedPost?: BlogPost;
-  users?: User[]; 
   loading: boolean;
   error?: string;
 }
