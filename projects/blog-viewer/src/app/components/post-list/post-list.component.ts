@@ -44,10 +44,16 @@ import { Observable } from 'rxjs';
 })
 export class PostListComponent implements OnInit {
   posts$!: Observable<BlogPost[]>;
+  error: string | null = null;
 
   constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {
+    this.loadPosts();
+  }
+
+  loadPosts(): void {
+    this.error = null;
     this.posts$ = this.blogService.getPosts();
   }
 }

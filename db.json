@@ -2,11 +2,11 @@
   "posts": [
     {
       "postId": "bp1",
-      "title": "Introduction to Frontends Micro",
+      "title": "Introduction to Frontends Micro 2",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "authorId": "u1",
+      "authorId": "u2",
       "createdAt": "2023-10-05T14:00:00Z",
-      "updatedAt": "2024-12-02T08:31:04.487Z",
+      "updatedAt": "2024-12-02T12:27:01.679Z",
       "tags": [
         "architecture",
         "frontend",
@@ -29,21 +29,6 @@
       ],
       "status": "Draft",
       "id": "12a4"
-    },
-    {
-      "id": "95c7",
-      "postId": "bp1733000544508",
-      "title": "Fourth post",
-      "content": "asd asd  asd asdasd asdasdaad asdas",
-      "authorId": "u2",
-      "tags": [
-        "angular",
-        "css",
-        "frontend"
-      ],
-      "status": "Draft",
-      "createdAt": "2024-11-30T21:02:24.508Z",
-      "updatedAt": "2024-12-02T08:31:38.656Z"
     }
   ],
   "users": [

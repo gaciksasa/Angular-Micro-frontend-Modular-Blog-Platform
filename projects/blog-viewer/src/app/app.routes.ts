@@ -1,4 +1,3 @@
-// projects/blog-viewer/src/app/app.routes.ts
 import { Routes } from '@angular/router';
 import { PostListComponent } from './components/post-list/post-list.component';
 

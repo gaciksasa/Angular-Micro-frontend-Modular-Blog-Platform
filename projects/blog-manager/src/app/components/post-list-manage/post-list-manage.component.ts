@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { BlogService, BlogPost } from 'shared-lib';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-post-list',
+  selector: 'app-post-manage',
   standalone: true,
-  imports: [AsyncPipe, RouterLink, RouterModule],
-  templateUrl: './post-list.component.html'
+  imports: [AsyncPipe, RouterLink],
+  templateUrl: './post-list-manage.component.html'
 })
-export class PostListComponent implements OnInit {
+export class PostListManageComponent implements OnInit {
   posts$!: Observable<BlogPost[]>;
   error: string | null = null;
 
