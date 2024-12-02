@@ -1,4 +1,3 @@
-// projects/shell/src/app/app.component.ts
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from 'shared-lib';
