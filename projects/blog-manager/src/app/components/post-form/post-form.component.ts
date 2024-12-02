@@ -82,7 +82,7 @@ export class PostFormComponent implements OnInit {
 
       operation.subscribe({
         next: () => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/manager']);
         },
         error: (error) => {
           this.error = 'Failed to save post. Please try again.';
