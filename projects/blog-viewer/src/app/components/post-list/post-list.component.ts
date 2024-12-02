@@ -37,11 +37,15 @@ export class PostListComponent implements OnInit {
     ]).pipe(
       map(([posts, term]) => {
         const searchTerm = term.toLowerCase();
-        return posts.filter(post => 
-          post.title.toLowerCase().includes(searchTerm) ||
-          post.content.toLowerCase().includes(searchTerm) ||
-          post.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-        );
+        return posts
+          // First filter for published posts only
+          .filter(post => post.status === 'Published')
+          // Then apply search filter
+          .filter(post => 
+            post.title.toLowerCase().includes(searchTerm) ||
+            post.content.toLowerCase().includes(searchTerm) ||
+            post.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+          );
       })
     );
   }

@@ -11,14 +11,14 @@
         "bbb",
         "ccc"
       ],
-      "status": "Draft",
+      "status": "Published",
       "createdAt": "2024-12-02T14:14:36.938Z",
-      "updatedAt": "2024-12-02T14:38:51.436Z"
+      "updatedAt": "2024-12-02T14:43:31.766Z"
     },
     {
       "id": "e4a4",
       "postId": "bp1733149087643",
-      "title": "asas asd",
+      "title": "Third post",
       "content": "asd as das",
       "authorId": "u1",
       "tags": [
@@ -26,7 +26,22 @@
       ],
       "status": "Published",
       "createdAt": "2024-12-02T14:18:07.643Z",
-      "updatedAt": "2024-12-02T14:18:07.643Z"
+      "updatedAt": "2024-12-02T14:43:15.308Z"
+    },
+    {
+      "id": "c2ff",
+      "postId": "bp1733150483614",
+      "title": "Second post",
+      "content": "ads asd asd asd Lorem asd asdas d",
+      "authorId": "u1",
+      "tags": [
+        "bbb",
+        "ccc",
+        "aaa"
+      ],
+      "status": "Published",
+      "createdAt": "2024-12-02T14:41:23.614Z",
+      "updatedAt": "2024-12-02T14:43:45.891Z"
     }
   ],
   "users": [
