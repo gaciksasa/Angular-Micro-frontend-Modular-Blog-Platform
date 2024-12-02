@@ -1,59 +1,84 @@
-# BlogPlatform
+# Angular Micro-Frontend Blog Platform
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+A modular blog platform built with Angular featuring separate blog viewing and management applications sharing common functionality through a shared library.
 
-## Development server
+## Architecture
 
-To start a local development server, run:
+## Features
+
+- 🏰 Independent blog viewing and management applications
+- 🔄 Shared state and services
+- 🌓 Dark/light theme support
+- 🔍 Search and filtering by title, content, tags
+- 👥 Author management
+- 🏷️ Tag system
+- 📱 Responsive design
+
+## Technical Stack
+
+- Angular 19
+- Standalone components
+- RxJS for state management
+- Tailwind CSS
+- JSON Server (mock backend)
+
+## Implementation Decisions
+
+### Micro-Frontend Architecture
+
+**Pros:**
+
+- Independent deployment capabilities
+- Team scalability
+- Clear separation of concerns
+- Independent development
+
+**Cons:**
+
+- More complex initial setup
+- Routing coordination required
+- Shared state management challenges
+
+### Shared Library (shared-lib)
+
+**Pros:**
+
+- Code reuse across applications
+- Consistent interfaces and types
+- Centralized state management
+- Single source of truth
+
+**Cons:**
+
+- Build coordination needed
+- Version management overhead
+- Potential for tight coupling
+
+### Standalone Components
+
+**Pros:**
+
+- Simplified dependency injection
+- Improved tree-shaking
+- Easier testing isolation
+
+**Cons:**
+
+- Newer Angular feature
+- Learning curve for teams
+- Limited legacy support
+
+## Setup
+
+### Development
 
 ```bash
-ng serve
+# Install dependencies
+npm install
+
+# Start mock backend
+json-server --watch db.json --port 3000
+
+# Serve application
+ng serve shell         # Main application
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
