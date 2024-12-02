@@ -26,7 +26,7 @@
       <article 
         class="p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow hover:cursor-pointer"
         [routerLink]="['/viewer/post', post.postId]">
-        <h2 class="text-xl font-semibold mb-2">{{ post.title }}</h2>
+        <h2 class="text-xl font-semibold mb-2 text-blue-500">{{ post.title }}</h2>
         
         <div class="flex gap-2 mb-4">
           @for (tag of post.tags; track tag) {
