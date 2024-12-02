@@ -14,6 +14,19 @@
       "status": "Draft",
       "createdAt": "2024-12-02T14:14:36.938Z",
       "updatedAt": "2024-12-02T14:14:36.938Z"
+    },
+    {
+      "id": "e4a4",
+      "postId": "bp1733149087643",
+      "title": "asas asd",
+      "content": "asd as das",
+      "authorId": "u1",
+      "tags": [
+        "aaaa"
+      ],
+      "status": "Published",
+      "createdAt": "2024-12-02T14:18:07.643Z",
+      "updatedAt": "2024-12-02T14:18:07.643Z"
     }
   ],
   "users": [
