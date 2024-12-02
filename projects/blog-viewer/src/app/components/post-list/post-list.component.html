@@ -19,6 +19,16 @@
         }
       }
     </select>
+
+    <select
+      [(ngModel)]="selectedSort"
+      (ngModelChange)="onSortChange($event)"
+      class="w-48 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      <option value="dateDesc">Newest First</option>
+      <option value="dateAsc">Oldest First</option>
+      <option value="titleAsc">Title A-Z</option>
+      <option value="titleDesc">Title Z-A</option>
+    </select>
 </div>  
 @if (filteredPosts$ | async; as posts) {
   <div class="grid gap-6">
