@@ -75,7 +75,7 @@ A modular blog platform built with Angular 19, featuring separate blog viewing a
 npm install
 
 # Start mock backend
-json-server --watch db.json --port 3000
+npm run start:mock-server
 
 # Serve application
 ng serve shell         # Main application
