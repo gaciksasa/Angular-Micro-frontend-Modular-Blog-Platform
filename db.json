@@ -3,26 +3,28 @@
     {
       "id": "9394",
       "postId": "bp1733148876938",
-      "title": "First post",
-      "content": "Lorem ipsum dolor sit amet...",
-      "authorId": "u2",
+      "title": "Introduction to Modern Web Development",
+      "content": "Web development has evolved significantly over the past decade. Modern frameworks and tools have revolutionized how we build applications, making development more efficient and scalable. The rise of JavaScript frameworks like React, Angular, and Vue has transformed front-end development, while Node.js has made JavaScript viable for server-side programming. Additionally, the adoption of containerization technologies like Docker and orchestration tools like Kubernetes has simplified deployment and scaling. Developers now have access to powerful CSS frameworks, build tools, and testing frameworks that streamline the development process. The emphasis on responsive design and progressive web apps has also changed how we approach web development, ensuring applications work seamlessly across all devices and network conditions.",
+      "authorId": "u1",
       "tags": [
-        "aaa",
-        "bbb",
-        "ccc"
+        "webdev",
+        "javascript",
+        "programming"
       ],
-      "status": "Draft",
+      "status": "Published",
       "createdAt": "2024-12-02T14:14:36.938Z",
-      "updatedAt": "2024-12-02T14:56:17.599Z"
+      "updatedAt": "2024-12-02T16:21:38.182Z"
     },
     {
       "id": "e4a4",
       "postId": "bp1733149087643",
-      "title": "Third post",
-      "content": "asd as das",
-      "authorId": "u1",
+      "title": "The Future of Artificial Intelligence",
+      "content": "Artificial Intelligence is reshaping industries and transforming how we live and work. From natural language processing powering virtual assistants to computer vision enabling autonomous vehicles, AI technologies are becoming increasingly sophisticated. Machine learning algorithms are now capable of analyzing vast amounts of data to identify patterns and make predictions with unprecedented accuracy. In healthcare, AI is assisting in diagnosis and drug discovery, while in finance, it's revolutionizing risk assessment and fraud detection. The emergence of generative AI models has opened new possibilities in content creation, code generation, and creative tasks. However, this rapid advancement also raises important ethical considerations about privacy, bias, and the future of human work in an AI-driven world.",
+      "authorId": "u2",
       "tags": [
-        "aaaa"
+        "ai",
+        "technology",
+        "future"
       ],
       "status": "Published",
       "createdAt": "2024-12-02T14:18:07.643Z",
@@ -31,13 +33,13 @@
     {
       "id": "c2ff",
       "postId": "bp1733150483614",
-      "title": "Second post",
-      "content": "ads asd asd asd Lorem asd asdas d",
-      "authorId": "u2",
+      "title": "Sustainable Technology Practices",
+      "content": "As technology continues to advance, the importance of sustainable practices in the tech industry cannot be overstated. Green computing initiatives are focusing on reducing energy consumption in data centers through innovative cooling solutions and energy-efficient hardware. Cloud providers are increasingly powering their facilities with renewable energy, while software developers are optimizing code for better energy efficiency. E-waste management has become a critical concern, with companies implementing recycling programs and designing products for easier repair and component reuse. The concept of circular economy is gaining traction in tech manufacturing, emphasizing the importance of sustainable materials and product lifecycle management. These efforts are crucial in reducing the technology sector's environmental impact.",
+      "authorId": "u3",
       "tags": [
-        "bbb",
-        "ccc",
-        "aaa"
+        "sustainability",
+        "technology",
+        "environment"
       ],
       "status": "Published",
       "createdAt": "2024-12-02T14:41:23.614Z",
@@ -46,15 +48,107 @@
     {
       "id": "2837",
       "postId": "bp1733150680632",
-      "title": "Fourth post",
-      "content": "asd sdasd asdasd as dasdasd",
-      "authorId": "u1",
+      "title": "Cybersecurity Best Practices",
+      "content": "In today's interconnected world, cybersecurity has become more critical than ever. Organizations must implement robust security measures to protect against increasingly sophisticated cyber threats. This includes adopting multi-factor authentication, regular security audits, and comprehensive employee training programs. Zero-trust architecture is emerging as a crucial security model, requiring verification from anyone trying to access network resources. Encryption, both in transit and at rest, remains fundamental to data protection. Regular penetration testing and vulnerability assessments help identify potential security gaps before they can be exploited. The rise of remote work has added new security challenges, requiring organizations to adapt their security strategies to protect distributed workforces and cloud-based resources.",
+      "authorId": "u4",
       "tags": [
-        "aaa"
+        "security",
+        "cybersecurity",
+        "tech"
       ],
-      "status": "Published",
+      "status": "Draft",
       "createdAt": "2024-12-02T14:44:40.632Z",
       "updatedAt": "2024-12-02T14:44:56.861Z"
+    },
+    {
+      "id": "7b52",
+      "postId": "bp1733150780123",
+      "title": "The Rise of Cloud Computing",
+      "content": "Cloud computing has fundamentally changed how businesses operate and scale their technology infrastructure. The ability to provision resources on-demand has eliminated the need for large upfront hardware investments and reduced operational complexity. Organizations can now leverage sophisticated services like machine learning, data analytics, and content delivery networks without maintaining complex infrastructure. Serverless computing is taking this evolution further, allowing developers to focus purely on code without worrying about server management. Multi-cloud strategies are becoming common, with businesses leveraging different cloud providers for specific capabilities. Edge computing is emerging as a complement to cloud services, bringing computation closer to data sources and reducing latency for critical applications.",
+      "authorId": "u5",
+      "tags": [
+        "cloud",
+        "technology",
+        "business"
+      ],
+      "status": "Published",
+      "createdAt": "2024-12-02T15:10:40.632Z",
+      "updatedAt": "2024-12-02T15:15:56.861Z"
+    },
+    {
+      "id": "3c91",
+      "postId": "bp1733150880456",
+      "title": "Mobile App Development Trends",
+      "content": "Mobile app development continues to evolve with new technologies and user expectations. Cross-platform development frameworks like React Native and Flutter are gaining popularity, allowing developers to build apps for multiple platforms from a single codebase. Progressive Web Apps (PWAs) are bridging the gap between web and native applications, offering app-like experiences through the browser. The integration of AR and VR features is creating more immersive mobile experiences, while AI and machine learning are enabling smarter, more personalized applications. Performance optimization remains crucial, with developers focusing on app size reduction and faster load times. The emergence of 5G networks is opening new possibilities for high-bandwidth applications and real-time features.",
+      "authorId": "u1",
+      "tags": [
+        "mobile",
+        "development",
+        "apps"
+      ],
+      "status": "Published",
+      "createdAt": "2024-12-02T15:30:40.632Z",
+      "updatedAt": "2024-12-02T15:35:56.861Z"
+    },
+    {
+      "id": "4d23",
+      "postId": "bp1733150980789",
+      "title": "Understanding Blockchain Technology",
+      "content": "Blockchain technology extends far beyond its cryptocurrency origins, offering new possibilities for secure, decentralized data management. Smart contracts are enabling automated, trustless transactions across various industries, from supply chain management to real estate. Decentralized Finance (DeFi) is reimagining traditional financial services, while NFTs are revolutionizing digital ownership and creative industries. Enterprise blockchain solutions are being adopted for transparency and efficiency in business processes. The technology continues to evolve with improvements in scalability, energy efficiency, and interoperability between different blockchain networks. As the ecosystem matures, we're seeing increased focus on regulatory compliance and institutional adoption.",
+      "authorId": "u2",
+      "tags": [
+        "blockchain",
+        "crypto",
+        "technology"
+      ],
+      "status": "Draft",
+      "createdAt": "2024-12-02T15:45:40.632Z",
+      "updatedAt": "2024-12-02T15:50:56.861Z"
+    },
+    {
+      "id": "5e45",
+      "postId": "bp1733151080012",
+      "title": "The Impact of 5G Networks",
+      "content": "The rollout of 5G networks represents a fundamental shift in wireless communication capabilities. Beyond faster mobile internet, 5G enables new use cases through its ultra-low latency and massive device connectivity. This technology is crucial for the advancement of Internet of Things (IoT) applications, autonomous vehicles, and smart cities. Industrial applications benefit from 5G's reliability and speed, enabling real-time monitoring and control of manufacturing processes. Network slicing allows operators to provide customized service levels for different applications and users. The combination of 5G with edge computing is creating new possibilities for distributed computing and real-time applications. As coverage expands, we're seeing innovative applications across healthcare, entertainment, and public safety.",
+      "authorId": "u3",
+      "tags": [
+        "5g",
+        "networks",
+        "technology"
+      ],
+      "status": "Published",
+      "createdAt": "2024-12-02T16:00:40.632Z",
+      "updatedAt": "2024-12-02T16:05:56.861Z"
+    },
+    {
+      "id": "6f67",
+      "postId": "bp1733151180345",
+      "title": "DevOps Best Practices",
+      "content": "DevOps has transformed how organizations develop, deploy, and maintain software applications. Continuous Integration and Continuous Deployment (CI/CD) pipelines automate the software delivery process, reducing errors and accelerating time to market. Infrastructure as Code (IaC) enables version-controlled, reproducible infrastructure deployment. Monitoring and observability practices provide insights into application performance and user experience. The adoption of microservices architecture facilitates independent deployment and scaling of application components. Container orchestration platforms like Kubernetes have become essential for managing complex, distributed applications. Site Reliability Engineering (SRE) practices help maintain service reliability while enabling rapid innovation.",
+      "authorId": "u4",
+      "tags": [
+        "devops",
+        "development",
+        "automation"
+      ],
+      "status": "Published",
+      "createdAt": "2024-12-02T16:15:40.632Z",
+      "updatedAt": "2024-12-02T16:20:56.861Z"
+    },
+    {
+      "id": "7g89",
+      "postId": "bp1733151280678",
+      "title": "UI/UX Design Principles",
+      "content": "Effective UI/UX design is crucial for creating digital products that users love. Design thinking methodology emphasizes understanding user needs and behaviors before designing solutions. Accessibility has become a fundamental aspect of design, ensuring digital products are usable by people with various abilities. The rise of design systems helps maintain consistency across products while accelerating the design and development process. User research and usability testing provide valuable insights for iterative improvement. Mobile-first design approaches ensure applications work well across different device sizes. Micro-interactions and animations enhance user engagement while providing valuable feedback. The integration of voice interfaces and gesture controls is expanding how users interact with digital products.",
+      "authorId": "u5",
+      "tags": [
+        "design",
+        "ui",
+        "ux"
+      ],
+      "status": "Published",
+      "createdAt": "2024-12-02T16:30:40.632Z",
+      "updatedAt": "2024-12-02T16:35:56.861Z"
     }
   ],
   "users": [
@@ -71,6 +165,27 @@
       "email": "bob.smith@example.com",
       "role": "Contributor",
       "id": "f3aa"
+    },
+    {
+      "userId": "u3",
+      "name": "Carol Williams",
+      "email": "carol.williams@example.com",
+      "role": "Editor",
+      "id": "8b12"
+    },
+    {
+      "userId": "u4",
+      "name": "David Brown",
+      "email": "david.brown@example.com",
+      "role": "Contributor",
+      "id": "2c34"
+    },
+    {
+      "userId": "u5",
+      "name": "Eva Martinez",
+      "email": "eva.martinez@example.com",
+      "role": "Editor",
+      "id": "9d56"
     }
   ]
 }

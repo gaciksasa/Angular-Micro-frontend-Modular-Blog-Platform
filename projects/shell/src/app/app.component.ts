@@ -1,13 +1,13 @@
 // projects/shell/src/app/app.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from 'shared-lib';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, AsyncPipe],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, AsyncPipe],
   template: `
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
       <nav class="bg-white dark:bg-gray-800 shadow-sm">
@@ -17,17 +17,29 @@ import { AsyncPipe } from '@angular/common';
               <span class="text-xl font-semibold text-gray-800 dark:text-white">My Blog Platform</span>
             </div>
             <div class="flex items-center space-x-4">
+              <a 
+                [routerLink]="['/viewer']" 
+                routerLinkActive="text-blue-400 dark:text-blue-400"
+                [routerLinkActiveOptions]="{exact: true}"
+                class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                View Blog
+              </a>
+              <a 
+                [routerLink]="['/manager']"
+                routerLinkActive="text-blue-400 dark:text-blue-400"
+                [routerLinkActiveOptions]="{exact: true}"
+                class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                Manage Posts
+              </a>
               <button 
                 (click)="themeService.toggleTheme()"
-                class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white">
+                class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white">
                 @if (themeService.isDarkTheme$ | async) {
                   🌞
                 } @else {
                   🌙
                 }
               </button>
-              <a [routerLink]="['/viewer']" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">View Blog</a>
-              <a [routerLink]="['/manager']" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Manage Posts</a>
             </div>
           </div>
         </div>
