@@ -4,7 +4,7 @@
     @for (post of posts; track post.postId) {
       <article 
         class="p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
-        [routerLink]="['/post', post.postId]">
+        [routerLink]="['/viewer/post', post.postId]">
         <h2 class="text-xl font-semibold mb-2">{{ post.title }}</h2>
         
         <div class="flex gap-2 mb-4">

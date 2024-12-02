@@ -8,10 +8,10 @@ import { RouterOutlet } from '@angular/router';
   template: `
     <div class="min-h-screen bg-gray-50">
       <nav class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between h-16">
             <div class="flex items-center">
-              <span class="text-xl font-semibold text-gray-800">Blog Platform</span>
+              <span class="text-xl font-semibold text-gray-800">My Blog Platform</span>
             </div>
             <div class="flex items-center space-x-4">
               <a href="/viewer" class="text-gray-600 hover:text-gray-900">View Blog</a>
@@ -21,7 +21,7 @@ import { RouterOutlet } from '@angular/router';
         </div>
       </nav>
       
-      <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <main class="max-w-4xl mx-auto py-6 sm:px-6 lg:px-8">
         <router-outlet />
       </main>
     </div>

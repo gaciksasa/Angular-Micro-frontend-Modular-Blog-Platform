@@ -3,7 +3,7 @@
 <div class="mb-4">
   <button 
     class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-    [routerLink]="['/new']">
+    [routerLink]="['/manager/new']">
     Create New Post
   </button>
 </div>
@@ -32,7 +32,7 @@
         <div class="flex gap-2">
           <button 
             class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
-            [routerLink]="['/edit', post.postId]">
+            [routerLink]="['/manager/edit', post.postId]">
             Edit
           </button>
           <button 
