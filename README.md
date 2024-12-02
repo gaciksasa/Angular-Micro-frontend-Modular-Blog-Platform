@@ -4,6 +4,13 @@ A modular blog platform built with Angular featuring separate blog viewing and m
 
 ## Architecture
 
+blog-platform/
+├── projects/
+│ ├── shell/ # Application shell
+│ ├── blog-viewer/ # Blog viewing application
+│ ├── blog-manager/ # Blog post management
+│ └── shared-lib/ # Shared components and services
+
 ## Features
 
 - 🏰 Independent blog viewing and management applications
